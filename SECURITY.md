@@ -2,10 +2,10 @@
 
 ## Reporting a vulnerability
 
-If you believe you've found a security vulnerability in peerbits-smart-launch,
+If you believe you've found a security vulnerability in smart-launch,
 please **do not open a public issue**. Instead:
 
-- Email: security@peerbits.com
+- Email: security@peerbitssolution.com
 - Or use GitHub's private vulnerability reporting: **Security -> Report a
   vulnerability** on this repo.
 
@@ -31,7 +31,7 @@ versions per semver.
 
 ## What this repo does and does not contain
 
-This is an open-source reference implementation maintained by Peerbits. It
+This is an open-source reference implementation maintained by PeerbitsSolution. It
 is intended to be:
 
 - **Spec-compliant** — grounded in the current published version of the

@@ -111,7 +111,7 @@ app.get("/callback", async (req, res) => {
 
 app.get("/", (_req, res) => {
   res.type("html").send(`
-    <h1>peerbits-smart-launch — EHR launch example</h1>
+    <h1>smart-launch — EHR launch example</h1>
     <p>This app is meant to be launched <em>from</em> an EHR (or the SMART
     Health IT sandbox launcher), which calls <code>/launch?iss=...&amp;launch=...</code>.</p>
     <p>To try it: open

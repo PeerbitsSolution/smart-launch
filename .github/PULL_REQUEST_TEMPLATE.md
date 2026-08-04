@@ -8,7 +8,7 @@
 - [ ] `npm run lint`, `npm run typecheck`, and `npm test` all pass locally
 - [ ] No real credentials, tokens, or realistic-looking secrets introduced
 - [ ] No real patient data (PHI) introduced anywhere, including test fixtures
-- [ ] No client names or Peerbits commercial product names introduced
+- [ ] No client names or PeerbitsSolution commercial product names introduced
 - [ ] CHANGELOG.md updated under `[Unreleased]` if this is a user-facing change
 - [ ] Docs/README updated if this changes public API or usage
 

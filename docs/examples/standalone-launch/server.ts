@@ -99,7 +99,7 @@ app.get("/callback", async (req, res) => {
 
 app.get("/", (_req, res) => {
   res.type("html").send(`
-    <h1>peerbits-smart-launch — standalone launch example</h1>
+    <h1>smart-launch — standalone launch example</h1>
     <p>Unlike the EHR launch example, this app already knows which FHIR
     server to talk to (<code>${config.iss}</code>) and initiates the
     launch itself.</p>

@@ -1,6 +1,6 @@
-# Contributing to peerbits-smart-launch
+# Contributing to smart-launch
 
-Thanks for considering a contribution. This repo is part of the Peerbits
+Thanks for considering a contribution. This repo is part of the PeerbitsSolution
 HealthTech Open Source initiative — small, focused, spec-grounded tools, not
 full products. Contributions that keep that scope are the easiest to accept.
 
@@ -17,8 +17,8 @@ full products. Contributions that keep that scope are the easiest to accept.
 ## Development setup
 
 ```bash
-git clone https://github.com/peerbits/peerbits-smart-launch.git
-cd peerbits-smart-launch
+git clone https://github.com/PeerbitsSolution/smart-launch.git
+cd smart-launch
 npm install
 npm test
 ```

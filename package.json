@@ -1,5 +1,5 @@
 {
-  "name": "@peerbits/peerbits-smart-launch",
+  "name": "smart-launch",
   "version": "0.1.0",
   "description": "SMART on FHIR authentication & launch flow reference implementation",
   "license": "Apache-2.0",
@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/peerbits/peerbits-smart-launch.git"
+    "url": "git+https://github.com/PeerbitsSolution/smart-launch.git"
   },
   "keywords": [
     "healthcare",

@@ -1,7 +1,7 @@
 import { describe, it, expect } from "vitest";
 import * as smartLaunch from "../src/index";
 
-describe("peerbits-smart-launch public API", () => {
+describe("smart-launch public API", () => {
   it("exports a version", () => {
     expect(smartLaunch.VERSION).toBeTruthy();
   });

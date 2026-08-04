@@ -1,5 +1,5 @@
 /**
- * peerbits-smart-launch
+ * smart-launch
  * SMART on FHIR authentication & launch flow reference implementation
  *
  * Public API surface — everything a consumer should import lives here.

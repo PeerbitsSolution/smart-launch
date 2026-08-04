@@ -1,4 +1,4 @@
-# peerbits-smart-launch
+# smart-launch
 
 > SMART on FHIR authentication & launch flow reference implementation
 
@@ -13,7 +13,7 @@ the OAuth2 Authorization Code Grant with PKCE, EHR-launch vs.
 standalone-launch handling, token exchange, and refresh. Vendor sandboxes
 (Epic, Cerner/Oracle Health, SMART Health IT) each have small quirks in
 this flow, and getting it wrong is the single most common cause of failed
-FHIR integrations. `peerbits-smart-launch` implements this once, correctly,
+FHIR integrations. `smart-launch` implements this once, correctly,
 against the SMART App Launch specification — framework-agnostic, fully
 typed, and with a pluggable token storage interface so you bring your own
 production backend instead of inheriting an opinionated one.
@@ -40,7 +40,7 @@ production backend instead of inheriting an opinionated one.
 ## 3. Installation
 
 ```bash
-npm install @peerbits/peerbits-smart-launch
+npm install smart-launch
 ```
 
 ## 4. Quick Start
@@ -54,7 +54,7 @@ import {
   buildStandaloneAuthorizationRequest,
   handleStandaloneCallback,
   type LaunchConfig,
-} from "@peerbits/peerbits-smart-launch";
+} from "smart-launch";
 
 const config: LaunchConfig = {
   clientId: "YOUR_CLIENT_ID_HERE", // the sandbox accepts any client_id for its public test apps
@@ -77,8 +77,8 @@ See it running end-to-end with a real Express server in
 [docs/examples/express-ehr-launch](./docs/examples/express-ehr-launch):
 
 ```bash
-git clone https://github.com/peerbits/peerbits-smart-launch.git
-cd peerbits-smart-launch
+git clone https://github.com/PeerbitsSolution/smart-launch.git
+cd smart-launch
 npm install
 npm run example:standalone
 # open http://localhost:3001
@@ -158,7 +158,7 @@ testing — is covered in the **[Production Guide](./docs/PRODUCTION_GUIDE.md)**
 
 - [ ] SMART Backend Services support (system-to-system, no user context) —
       explicitly out of scope for this repo; candidate for a future
-      `peerbits-*` package
+      package in this initiative
 - [ ] Additional `TokenStorage` reference adapters (Redis, encrypted
       cookie) as documented examples — core package stays backend-agnostic
 - [ ] Expanded launch-context claim coverage as the SMART spec adds new
@@ -173,9 +173,9 @@ are a good place to start.
 
 Apache License 2.0 — see [LICENSE](./LICENSE).
 
-## 10. About Peerbits
+## 10. About PeerbitsSolution
 
-peerbits-smart-launch is part of the [Peerbits HealthTech Open Source](https://github.com/peerbits)
+smart-launch is part of the [PeerbitsSolution HealthTech Open Source](https://github.com/PeerbitsSolution)
 initiative — reusable engineering components extracted from our healthcare
 technology work, published so other teams don't have to solve the same
 problems from scratch. This repository contains generalized, reusable logic

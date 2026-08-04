@@ -1,7 +1,7 @@
 # Production Guide
 
 This guide covers what the [README](../README.md) Quick Start doesn't:
-running `peerbits-smart-launch` in a real application, against real EHR
+running `smart-launch` in a real application, against real EHR
 vendors, in production. Everything here reflects either the library's
 actual implemented behavior or launch flows verified live against public
 sandboxes (SMART Health IT, Epic, Cerner/Oracle Health) during
@@ -26,7 +26,7 @@ instances. For production, implement `TokenStorage` against whatever
 you already run:
 
 ```ts
-import type { TokenStorage, StoredToken } from "@peerbits/peerbits-smart-launch";
+import type { TokenStorage, StoredToken } from "smart-launch";
 
 class RedisTokenStorage implements TokenStorage {
   constructor(private redis: RedisClient) {}
