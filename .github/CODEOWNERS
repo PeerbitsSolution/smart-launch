@@ -1,0 +1,10 @@
+# Default owners for everything in this repo, unless a later match takes precedence.
+# Replace peerbits/interop-team with the actual GitHub team or usernames before publishing.
+
+*                           @peerbits/interop-team
+
+# Security-critical paths always require review from the owning team,
+# even if a contributor has broader merge rights.
+/src/token*                 @peerbits/interop-team
+/src/**/auth*               @peerbits/interop-team
+SECURITY.md                 @peerbits/interop-team

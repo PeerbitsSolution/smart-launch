@@ -1,0 +1,57 @@
+{
+  "name": "@peerbits/peerbits-smart-launch",
+  "version": "0.1.0",
+  "description": "SMART on FHIR authentication & launch flow reference implementation",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit -p tsconfig.json && tsc --noEmit -p tsconfig.tests.json",
+    "test": "vitest run",
+    "test:sandbox": "RUN_SANDBOX_TESTS=1 vitest run --testNamePattern=sandbox",
+    "example:ehr": "tsx docs/examples/express-ehr-launch/server.ts",
+    "example:standalone": "tsx docs/examples/standalone-launch/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peerbits/peerbits-smart-launch.git"
+  },
+  "keywords": [
+    "healthcare",
+    "fhir",
+    "smart-on-fhir",
+    "oauth2",
+    "pkce",
+    "typescript",
+    "ehr-launch"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0",
+    "eslint": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "@types/node": "^20.0.0",
+    "@types/express": "^4.17.21",
+    "@types/supertest": "^6.0.2",
+    "express": "^4.19.2",
+    "supertest": "^7.0.0",
+    "tsx": "^4.16.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

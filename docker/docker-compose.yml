@@ -1,0 +1,14 @@
+# Optional — spins up the EHR launch example app only. Do not use this
+# to ship a production data store; token/credential storage in examples
+# is in-memory and explicitly not production-grade (see SECURITY.md).
+services:
+  example-app:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=development
+      - SMART_CLIENT_ID=YOUR_CLIENT_ID_HERE
+      - SMART_REDIRECT_URI=http://localhost:3000/callback
