@@ -11,10 +11,19 @@ platforms with `smart-launch`.
   diagnosed. See [PRODUCTION_GUIDE.md §8](./PRODUCTION_GUIDE.md#8-vendor-specific-notes-from-actual-testing-not-assumptions)
   for the full incident-level detail behind the summaries below.
 - **From public docs, not independently tested** (athenahealth,
-  eClinicalWorks, Canvas Medical, Medplum) — sourced from each vendor's
-  public developer documentation and community reports, cited inline.
-  Treat these as a starting point, not a guarantee — verify against the
+  eClinicalWorks, Canvas Medical) — sourced from each vendor's public
+  developer documentation and community reports, cited inline. Treat
+  these as a starting point, not a guarantee — verify against the
   vendor's current docs and your own sandbox before relying on them.
+- **Discovery verified live, full flow not tested** (Medplum) — this
+  library's own `discover()` was actually run against Medplum's public
+  FHIR base and succeeded; the full login/token-exchange flow (which
+  needs a registered client and real credentials) has not been.
+
+An attempt to verify eClinicalWorks discovery the same way, against a
+community-referenced staging URL, **failed** (HTTP 400) — noted in its
+section below rather than silently dropped, since a negative result is
+still a result.
 
 ---
 
@@ -113,6 +122,15 @@ for validating any new SMART flow before touching a real vendor.
 - **Common implementation issues:** community reports of EHR-launch
   sandbox friction (see thread below); no independent confirmation from
   this project of a specific root cause.
+- **Tried and failed:** a staging FHIR base URL referenced in public
+  community config (`staging-fhir.ecwcloud.com/fhir/r4`) was tested with
+  this library's `discover()` and returned **HTTP 400** on both
+  `.well-known/smart-configuration` and the `/metadata` fallback — it
+  did not resolve for us. Most likely this endpoint is per-customer/tenant
+  scoped rather than a fixed public base (the same pattern Canvas uses
+  explicitly, below), so don't assume that URL works for your app; expect
+  to get your own sandbox base URL from eCW's Developer Portal after
+  registration.
 - **Docs:** [SMART App Launch spec — Scopes and Launch Context](https://build.fhir.org/ig/HL7/smart-app-launch/scopes-and-launch-context.html),
   [eClinicalWorks EHR-launch community thread](https://groups.google.com/g/smart-on-fhir/c/m0iTV-T23z8)
 
@@ -131,7 +149,20 @@ for validating any new SMART flow before touching a real vendor.
   Canvas's own guide before assuming behavior matches another vendor.
 - **Docs:** [Embedding a SMART app into Canvas](https://docs.canvasmedical.com/guides/embedding-a-smart-on-fhir-application/)
 
-## Medplum — from public docs, not independently tested
+## Medplum — discovery verified live, full OAuth flow not tested
+
+Unlike the other three vendors in this section, this library's `discover()`
+was actually run against Medplum's public hosted FHIR base
+(`https://api.medplum.com/fhir/R4`) and succeeded, returning:
+
+- `authorization_endpoint: https://api.medplum.com/oauth2/authorize`
+- `token_endpoint: https://api.medplum.com/oauth2/token`
+
+That confirms discovery interoperates correctly with Medplum today. The
+full authorize → login → callback → token exchange has **not** been run
+(needs a registered `ClientApplication` and a real login, same as Epic/
+Cerner/SMART Health IT required) — everything below this point is still
+from public docs, not independently tested end-to-end.
 
 - **Supported launch types:** Medplum implements the SMART App Launch 2.0.0
   standard both as an identity provider (hosting your app's launch) and as

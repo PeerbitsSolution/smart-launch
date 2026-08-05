@@ -125,7 +125,7 @@ for the canonical, authoritative sequence.
 | FHIR R4 | ✅ every example/vendor test in this repo targets R4 |
 | FHIR R4B | Planned — not yet tested |
 | FHIR R5 | Planned — not yet tested |
-| Node.js 18+ | ✅ per `package.json` engines; developed and tested on Node 20 |
+| Node.js 20+ | ✅ officially supported floor, per `package.json` engines |
 | TypeScript | ✅ strict mode, full type declarations published |
 
 Full feature detail:
@@ -228,9 +228,11 @@ Beyond this README:
   config patterns.
 - **[Vendor Notes](./docs/vendor-notes.md)** — per-vendor supported
   launch types, required scopes, known limitations, and common
-  implementation issues for SMART Health IT, Epic, Cerner (hands-on
-  tested) plus athenahealth, eClinicalWorks, Canvas Medical, and Medplum
-  (from public docs).
+  implementation issues for 7 vendors: SMART Health IT, Epic, Cerner
+  (hands-on tested, full flow), Medplum (discovery verified live), and
+  athenahealth, eClinicalWorks, Canvas Medical (from public docs —
+  eClinicalWorks includes a documented failed discovery attempt, not
+  hidden).
 - **[Common Errors](./docs/common-errors.md)** — causes and fixes for
   `redirect_uri` mismatch, `invalid_grant`, PKCE failures, missing launch
   parameters, invalid scope, issuer mismatch, and missing patient context.
