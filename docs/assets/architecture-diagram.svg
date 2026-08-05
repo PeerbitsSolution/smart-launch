@@ -1,0 +1,80 @@
+<svg viewBox="0 0 860 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sequence diagram: EHR opens the app with iss and launch; the app discovers the authorization server, redirects with a PKCE challenge and state, receives an authorization code, exchanges it for an access token and patient context, then calls the FHIR server with the bearer token.">
+  <title>smart-launch request flow</title>
+  <style>
+    :root { color-scheme: light dark; }
+    .line { stroke: #57606a; }
+    .lifeline { stroke: #8c959f; stroke-dasharray: 3 4; }
+    .arrow { fill: #57606a; }
+    .accent { stroke: #0969da; }
+    .accentfill { fill: #0969da; }
+    .lane-box { fill: #f6f8fa; stroke: #d0d7de; }
+    .lane-text { fill: #24292f; font-weight: 600; }
+    .label-text { fill: #24292f; }
+    @media (prefers-color-scheme: dark) {
+      .line { stroke: #9198a1; }
+      .lifeline { stroke: #6e7681; }
+      .arrow { fill: #9198a1; }
+      .accent { stroke: #58a6ff; }
+      .accentfill { fill: #58a6ff; }
+      .lane-box { fill: #161b22; stroke: #30363d; }
+      .lane-text { fill: #e6edf3; }
+      .label-text { fill: #e6edf3; }
+    }
+    text { font-family: -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+  </style>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" class="arrow" />
+    </marker>
+  </defs>
+
+  <!-- Lane headers -->
+  <rect x="40" y="12" width="180" height="32" rx="4" class="lane-box" />
+  <text x="130" y="33" text-anchor="middle" class="lane-text" font-size="13">Your app (smart-launch)</text>
+
+  <rect x="330" y="12" width="220" height="32" rx="4" class="lane-box" />
+  <text x="440" y="33" text-anchor="middle" class="lane-text" font-size="13">EHR / Authorization Server</text>
+
+  <rect x="670" y="12" width="150" height="32" rx="4" class="lane-box" />
+  <text x="745" y="33" text-anchor="middle" class="lane-text" font-size="13">FHIR Server</text>
+
+  <!-- Lifelines -->
+  <line x1="130" y1="44" x2="130" y2="360" class="lifeline" />
+  <line x1="440" y1="44" x2="440" y2="360" class="lifeline" />
+  <line x1="745" y1="44" x2="745" y2="360" class="lifeline" />
+
+  <!-- 1: EHR opens app -->
+  <line x1="440" y1="70" x2="134" y2="70" class="line accent" stroke-width="1.6" marker-end="url(#arrow)" />
+  <text x="285" y="63" text-anchor="middle" class="label-text" font-size="12">opens app: ?iss=&amp;launch=</text>
+
+  <!-- 2: discovery -->
+  <line x1="130" y1="106" x2="436" y2="106" class="line" stroke-width="1.4" marker-end="url(#arrow)" />
+  <text x="285" y="99" text-anchor="middle" class="label-text" font-size="12">GET /.well-known/smart-configuration</text>
+
+  <!-- 3: authorize redirect -->
+  <line x1="130" y1="146" x2="436" y2="146" class="line accent" stroke-width="1.6" marker-end="url(#arrow)" />
+  <text x="285" y="139" text-anchor="middle" class="label-text" font-size="12">redirect: PKCE code_challenge (S256) + state</text>
+
+  <!-- 4: callback with code -->
+  <line x1="440" y1="186" x2="134" y2="186" class="line accent" stroke-width="1.6" marker-end="url(#arrow)" />
+  <text x="285" y="179" text-anchor="middle" class="label-text" font-size="12">redirect back: code + state</text>
+
+  <!-- 5: token exchange -->
+  <line x1="130" y1="226" x2="436" y2="226" class="line" stroke-width="1.4" marker-end="url(#arrow)" />
+  <text x="285" y="219" text-anchor="middle" class="label-text" font-size="12">POST /token (code + code_verifier)</text>
+
+  <!-- 6: token response -->
+  <line x1="440" y1="266" x2="134" y2="266" class="line accent" stroke-width="1.6" marker-end="url(#arrow)" />
+  <text x="285" y="259" text-anchor="middle" class="label-text" font-size="12">access_token + patient/encounter context</text>
+
+  <!-- 7: FHIR call -->
+  <line x1="130" y1="316" x2="741" y2="316" class="line" stroke-width="1.4" marker-end="url(#arrow)" />
+  <text x="440" y="309" text-anchor="middle" class="label-text" font-size="12">GET /Patient/{id} — Authorization: Bearer &lt;access_token&gt;</text>
+
+  <!-- state markers under the lifelines -->
+  <circle cx="130" cy="70" r="3" class="accentfill" />
+  <circle cx="440" cy="70" r="3" class="accentfill" />
+  <circle cx="130" cy="146" r="3" class="accentfill" />
+  <circle cx="440" cy="186" r="3" class="accentfill" />
+</svg>

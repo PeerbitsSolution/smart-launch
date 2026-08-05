@@ -185,6 +185,11 @@ different config value doesn't already do.
 
 ## 8. Vendor-specific notes (from actual testing, not assumptions)
 
+> This section covers the three vendors validated hands-on during
+> development. For the full per-vendor breakdown (supported launch types,
+> required scopes, known limitations) including four additional vendors
+> sourced from public docs, see [vendor-notes.md](./vendor-notes.md).
+
 **SMART Health IT** (`launch.smarthealthit.org`) is the easiest to
 validate against and is spec-compliant by design. One quirk: its
 "standalone" test mode still expects a `launch` context parameter
@@ -222,6 +227,10 @@ token exchange worked correctly against all three on the first attempt
 each time the configuration matched what the library actually sends.
 
 ## 9. Troubleshooting
+
+> See [common-errors.md](./common-errors.md) for the fuller writeup of
+> each of these (causes, fixes, and which typed error class each one
+> surfaces as).
 
 | Symptom | Likely cause | Fix |
 |---|---|---|
