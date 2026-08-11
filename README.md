@@ -1,11 +1,32 @@
 # smart-launch
 
+[![License](https://img.shields.io/github/license/PeerbitsSolution/smart-launch)](./LICENSE)
+[![npm version](https://img.shields.io/npm/v/%40peerbits%2Fsmart-launch.svg)](https://www.npmjs.com/package/@peerbits/smart-launch)
+[![CI](https://github.com/PeerbitsSolution/smart-launch/actions/workflows/ci.yml/badge.svg)](https://github.com/PeerbitsSolution/smart-launch/actions/workflows/ci.yml)
+[![Node.js](https://img.shields.io/badge/node-%3E%3D20-brightgreen)](./package.json)
+[![FHIR](https://img.shields.io/badge/FHIR-R4-orange)](https://hl7.org/fhir/R4/)
+
 > **Production-ready SMART on FHIR authentication for Node.js healthcare
 > applications.**
 
 **Category:** FHIR & SMART — Interoperability Libraries · **License:** Apache-2.0 · **Status:** alpha
 
 ---
+
+## Table of Contents
+
+1. [Overview](#1-overview)
+2. [Why smart-launch?](#2-why-smart-launch)
+3. [Architecture](#3-architecture)
+4. [Features](#4-features)
+5. [Installation](#5-installation)
+6. [Quick Start](#6-quick-start)
+7. [Examples](#7-examples)
+8. [Documentation](#8-documentation)
+9. [Roadmap](#9-roadmap)
+10. [Contributing](#10-contributing)
+11. [License](#11-license)
+12. [About PeerbitsSolution](#12-about-peerbitssolution)
 
 ## 1. Overview
 
