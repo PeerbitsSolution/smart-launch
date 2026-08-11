@@ -150,7 +150,7 @@ Full feature detail:
 ## 5. Installation
 
 ```bash
-npm install smart-launch
+npm install @peerbits/smart-launch
 ```
 
 ## 6. Quick Start
@@ -164,7 +164,7 @@ import {
   buildStandaloneAuthorizationRequest,
   handleStandaloneCallback,
   type LaunchConfig,
-} from "smart-launch";
+} from "@peerbits/smart-launch";
 
 const config: LaunchConfig = {
   clientId: "YOUR_CLIENT_ID_HERE", // the sandbox accepts any client_id for its public test apps

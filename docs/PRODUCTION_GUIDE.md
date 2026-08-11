@@ -26,7 +26,7 @@ instances. For production, implement `TokenStorage` against whatever
 you already run:
 
 ```ts
-import type { TokenStorage, StoredToken } from "smart-launch";
+import type { TokenStorage, StoredToken } from "@peerbits/smart-launch";
 
 class RedisTokenStorage implements TokenStorage {
   constructor(private redis: RedisClient) {}

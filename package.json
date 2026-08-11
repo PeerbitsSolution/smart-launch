@@ -1,8 +1,11 @@
 {
-  "name": "smart-launch",
+  "name": "@peerbits/smart-launch",
   "version": "0.1.0",
   "description": "SMART on FHIR authentication & launch flow reference implementation",
   "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
