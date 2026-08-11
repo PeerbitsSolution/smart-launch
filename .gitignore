@@ -5,6 +5,9 @@ node_modules/
 dist/
 *.tsbuildinfo
 
+# npm pack/publish artifacts
+*.tgz
+
 # Env / secrets — never commit real values
 .env
 .env.*

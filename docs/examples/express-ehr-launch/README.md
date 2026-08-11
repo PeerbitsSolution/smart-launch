@@ -6,6 +6,13 @@ Demonstrates the EHR launch flow (handover FR1) against the public
 **Demo only** — not production-hardened. Pending-launch state and
 issued tokens are kept in process memory. See [SECURITY.md](../../../SECURITY.md).
 
+> This example lives inside the library's own repo, so it imports the
+> library from local source (`../../../src/index.js`) to exercise the
+> code you're about to run, not the published package. In your own
+> project, install and import it normally:
+> `npm install @peerbits/smart-launch`, then
+> `import { buildEhrAuthorizationRequest, handleEhrCallback } from "@peerbits/smart-launch"`.
+
 ## Run it
 
 ```bash

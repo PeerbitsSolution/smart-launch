@@ -5,6 +5,13 @@ public [SMART Health IT sandbox](https://launch.smarthealthit.org/).
 
 **Demo only** — not production-hardened. See [SECURITY.md](../../../SECURITY.md).
 
+> This example lives inside the library's own repo, so it imports the
+> library from local source (`../../../src/index.js`) to exercise the
+> code you're about to run, not the published package. In your own
+> project, install and import it normally:
+> `npm install @peerbits/smart-launch`, then
+> `import { buildStandaloneAuthorizationRequest, handleStandaloneCallback } from "@peerbits/smart-launch"`.
+
 ## Run it
 
 ```bash
