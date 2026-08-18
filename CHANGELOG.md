@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-08-18
+
 ### Added
 - SMART discovery (`.well-known/smart-configuration` with CapabilityStatement
   `oauth-uris` fallback)
@@ -23,9 +25,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/).
 - Full unit test suite for discovery, PKCE, token exchange/refresh, launch
   context parsing, storage, and both launch flows; a manually-run sandbox
   discovery test tagged separately from the CI suite
+- Hands-on validated live against three real SMART on FHIR vendors
+  (SMART Health IT, Epic, Cerner/Oracle Health) — EHR and standalone
+  launch, both flows, real logins, real token exchanges — plus discovery
+  verified live against Medplum
 
-<!--
-## [1.0.0] - YYYY-MM-DD
-### Added
-- Initial public release.
--->
+First tagged release. Alpha: API may still change before 1.0.0.
